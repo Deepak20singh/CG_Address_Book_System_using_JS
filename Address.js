@@ -1,3 +1,7 @@
+
+
+let addressBook=[];
+
 function nameCheck(naam){
     let regex=/^[A-Za-z]{3,}$/;
     if (!regex.test(naam)) throw new Error(`Invalid name.`);
@@ -48,6 +52,8 @@ class AddressClass {
     }
 }
 
-let add=new AddressClass("Deepak","Singh","House no 45","Bhopal","Madhya Pradesh","462046","9691876648","singh017deepak@gmail.com");
-console.log(add);
+let adding=new AddressClass("Deepak","Singh","House no 45","Bhopal","Madhya Pradesh","462046","9691876648","singh017deepak@gmail.com");
+addressBook.push(adding);
+console.log(adding);
 
+console.log(addressBook)
