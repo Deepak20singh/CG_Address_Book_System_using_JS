@@ -135,6 +135,11 @@ function searchByCityOrState(location){
     }
 }
 
+function sortByName(){
+    addressBook.sort((a,b)=>a.first.localeCompare(b.first));
+    console.log("Sorted elements");
+    addressBook.forEach(contact => console.log(`${contact.first} ${contact.last_names} :- ${contact.email}`));
+}
 function countByCityOrState(location){
     let count = addressBook.reduce((acc, contact) => {
         if (contact.city === location || contact.state === location) {
@@ -151,7 +156,5 @@ let adding2 = new AddressClass("Rahul", "Sharma", "Sector 22", "Noida", "Uttar P
 adding(adding1);
 adding(adding2);
 adding(adding1);
-countByCityOrState("Bhopal");
 
-searchByCityOrState("bhopal");
-searchByCityOrState("Madhya Pradesh");
+sortByName();
